@@ -27,7 +27,7 @@ public class Game_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Time.timeScale = 1;
         Score = 1000;
         gameOver.enabled = false;
         restart.enabled = false;
