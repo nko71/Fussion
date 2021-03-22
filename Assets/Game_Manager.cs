@@ -20,14 +20,21 @@ public class Game_Manager : MonoBehaviour
 
     public Button restart;
 
+    public Button start;
+
+    public Text description;
+
     Text restat;
+    Text startT;
+
+    bool paused;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 0;
         Score = 1000;
         gameOver.enabled = false;
         restart.enabled = false;
@@ -47,6 +54,7 @@ public class Game_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       // pausegame();
 
         scoreBoard.text = "Score" + Score;
 
@@ -82,8 +90,52 @@ public class Game_Manager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-   
+    public void startgame()
+    {
+        Time.timeScale = 1;
 
+        start.enabled = false;
+        start.image.enabled = false;
+        startT = start.GetComponentInChildren<Text>();
+
+        startT.enabled = false;
+
+        description.enabled = false;
+    }
+   
+   /* public void pausegame()
+    {
+        // paused = false;
+
+        int click = 0;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            
+
+
+            click++;
+
+            click = click % 2;
+
+            
+        }
+        
+
+        if (click == 0)
+        {
+            paused = false;
+        }
+
+        if (click == 1)
+        {
+            paused = true;
+        }
+
+        Time.timeScale = paused ? 0 : 1;
+        
+    }
+   */
 
 
   
